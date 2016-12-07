@@ -1,0 +1,21 @@
+---
+- name: Install packages
+  apt: name={{ item }} state=present
+  become: yes
+  with_items:
+    - postgresql
+    - python-psycopg2
+
+- name: Add user
+  postgresql_user:
+    name: sestrella
+    role_attr_flags: SUPERUSER
+  become: yes
+  become_user: postgres
+
+- name: Create database
+  postgresql_db:
+    name: sestrella
+    owner: sestrella
+  become: yes
+  become_user: postgres

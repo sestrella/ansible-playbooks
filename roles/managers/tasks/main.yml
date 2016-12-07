@@ -1,0 +1,12 @@
+---
+- include: node.yml
+  tags: node
+
+- include: ruby.yml
+  tags: ruby
+
+- include: tmux.yml
+  tags: tmux
+
+- include: vim.yml
+  tags: vim

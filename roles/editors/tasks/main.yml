@@ -1,0 +1,9 @@
+---
+- include: atom.yml
+  tags: atom
+
+- include: emacs.yml
+  tags: emacs
+
+- include: vim.yml
+  tags: vim
