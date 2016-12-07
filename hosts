@@ -1,2 +1,2 @@
 [defaults]
-localhost ansible_connection=local
+docker ansible_connection=docker

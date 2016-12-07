@@ -1,13 +1,8 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    apt-add-repository -y ppa:ansible/ansible && \
-    apt-get update && \
-    apt-get install -y ansible
+RUN apt update && apt install -y python sudo
 
-COPY . /root/ansible
-WORKDIR /root/ansible
+RUN useradd -m sestrella
 
-ENTRYPOINT ["ansible-playbook"]
-CMD ["playbooks/bootstrap.yml", "--skip-tags", "docker"]
+USER sestrella
+WORKDIR /home/sestrella
