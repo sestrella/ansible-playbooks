@@ -1,7 +1,11 @@
 # Ansible
 
-[![Build Status][travis]](https://travis-ci.org/sestrella/ansible)
+[![Build Status][1]](https://travis-ci.org/sestrella/ansible)
 
 My Ansible playbooks.
 
-[travis]: https://travis-ci.org/sestrella/ansible.svg?branch=master
+## License
+
+Licensed under the MIT License.
+
+[1]: https://travis-ci.org/sestrella/ansible.svg?branch=master
