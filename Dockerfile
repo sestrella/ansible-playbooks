@@ -5,7 +5,7 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m sestrella
- RUN echo "sestrella ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN echo "sestrella ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER sestrella
 WORKDIR /home/sestrella
