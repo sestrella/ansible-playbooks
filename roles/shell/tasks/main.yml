@@ -23,10 +23,6 @@
     - zshenv
     - zshrc
 
-
-- name: Get username
-  register: username
-
 - name: Set default shell
   user:
     name: "{{ ansible_user }}"
