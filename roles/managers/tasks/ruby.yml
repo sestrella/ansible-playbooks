@@ -8,3 +8,11 @@
   git:
     repo: https://github.com/rbenv/ruby-build.git
     dest: ~/.rbenv/plugins/ruby-build
+
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - libreadline-dev
+    - libssl-dev
+  become: yes
