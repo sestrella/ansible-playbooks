@@ -1,13 +1,16 @@
 ---
-- apt_key:
+- name: Add repository key
+  apt_key:
     id: 575159689BEFB442
     keyserver: hkp://keyserver.ubuntu.com:80
   become: yes
 
-- apt_repository:
+- name: Add repository
+  apt_repository:
     repo: deb http://download.fpcomplete.com/ubuntu xenial main
   become: yes
 
-- apt:
+- name: Install stack
+  apt:
     name: stack
   become: yes

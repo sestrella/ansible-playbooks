@@ -2,5 +2,4 @@
 - name: Install vim
   apt:
     name: vim
-    state: present
   become: yes

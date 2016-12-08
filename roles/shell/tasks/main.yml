@@ -1,5 +1,5 @@
 ---
-- name: Install zsh
+- name: Install zsh package
   apt:
     name: zsh
     state: present
@@ -9,7 +9,6 @@
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
     dest: ~/.zprezto
-    recursive: yes
 
 - name: Symlink prezto files
   file:
@@ -24,8 +23,12 @@
     - zshenv
     - zshrc
 
+
+- name: Get username
+  register: username
+
 - name: Set default shell
   user:
-    name: sestrella
+    name: "{{ ansible_user }}"
     shell: /bin/zsh
   become: true
