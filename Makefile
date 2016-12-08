@@ -8,4 +8,4 @@ stop:
 	docker rm -f docker
 
 repl:
-	docker exec -it -u root docker bash 
+	docker exec -it docker /bin/bash 
