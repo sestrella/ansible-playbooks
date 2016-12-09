@@ -1,0 +1,14 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+
+provisioner:
+  name: ansible_playbook
+  hosts: test-kitchen
+
+platforms:
+  - name: ubuntu-16.04
+
+suites:
+  - name: default

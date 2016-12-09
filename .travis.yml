@@ -1,18 +1,1 @@
-sudo: required
-
-services:
-  - docker
-
-before_install:
-  - sudo apt-add-repository -y ppa:ansible/ansible
-  - sudo apt-get update
-  - sudo apt-get install -y ansible
-
-install:
-  - make build
-
-before_script:
-  - make start
-
-script:
-  - ansible-playbook -l docker site.yml
+sudo: ruby
