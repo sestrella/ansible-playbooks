@@ -1,4 +1,7 @@
 sudo: ruby
 
+services:
+  - docker
+
 script:
   - bundle exec kitchen test
