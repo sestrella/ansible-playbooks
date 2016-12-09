@@ -1,1 +1,4 @@
 sudo: ruby
+
+script:
+  - bundle exec kitchen test
