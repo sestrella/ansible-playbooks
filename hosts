@@ -1,2 +1,3 @@
+[default]
 docker ansible_connection=docker
 local ansible_connection=local
