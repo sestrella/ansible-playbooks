@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
-gem "kitchen-ansible"
-gem "kitchen-docker"
-gem "test-kitchen"
+group :test do
+  gem "kitchen-ansible"
+  gem "kitchen-docker"
+  gem "test-kitchen"
+end
