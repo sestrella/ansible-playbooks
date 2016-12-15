@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - bundle exec kitchen test
+  - make start
