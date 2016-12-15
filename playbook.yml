@@ -2,6 +2,3 @@
 - hosts: all
   roles:
     - editors
-    - managers
-    - shell
-    - tools
