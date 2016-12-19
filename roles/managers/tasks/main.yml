@@ -10,6 +10,3 @@
 
 - include: tmux.yml
   tags: tmux
-
-- include: vim.yml
-  tags: vim
