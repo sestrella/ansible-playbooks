@@ -3,3 +3,6 @@
 
 - include: git.yml
   tags: git
+
+- include: tmux.yml
+  tags: tmux

@@ -3,9 +3,7 @@
   apt:
     name: "{{ item }}"
   with_items:
-    - git
     - htop
     - silversearcher-ag
-    - tmux
     - tree
   become: yes
