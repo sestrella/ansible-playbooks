@@ -4,5 +4,8 @@
 - include: git.yml
   tags: git
 
+- include: ngrok.yml
+  tags: ngrok
+
 - include: tmux.yml
   tags: tmux
