@@ -14,3 +14,9 @@
     src: "{{ role_path }}/files/init-nvm.sh"
     dest: ~/.zsh/init-nvm.sh
     state: link
+
+- name: Copy nvmrc file
+  file:
+    src: "{{ role_path }}/files/nvmrc"
+    dest: ~/.nvmrc
+    state: link
