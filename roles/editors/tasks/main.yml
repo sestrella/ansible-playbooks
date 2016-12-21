@@ -4,3 +4,7 @@
 
 - include: vim.yml
   tags: vim
+
+- name: Set default editor
+  shell: update-alternatives --set editor /usr/bin/vim.basic
+  become: yes

@@ -9,6 +9,11 @@
     repo: https://github.com/rbenv/ruby-build.git
     dest: ~/.rbenv/plugins/ruby-build
 
+- name: Create ~/.zsh directory
+  file:
+    path: ~/.zsh
+    state: directory
+
 - name: Copy init-rbenv.sh file
   file:
     src: "{{ role_path }}/files/init-rbenv.sh"
