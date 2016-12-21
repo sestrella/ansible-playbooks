@@ -8,9 +8,22 @@
 - name: Add repository
   apt_repository:
     repo: deb http://download.fpcomplete.com/ubuntu xenial main
+    state: present
   become: yes
 
 - name: Install stack
   apt:
     name: stack
+    state: present
   become: yes
+
+- name: Create ~/.stack directory
+  file:
+    path: ~/.stack
+    state: directory
+
+- name: Copy stack-config.yaml file
+  file:
+    src: "{{ role_path }}/files/stack-config.yaml"
+    dest: ~/.stack/config.yaml
+    state: link
