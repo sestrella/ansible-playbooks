@@ -24,7 +24,12 @@
     - zpreztorc
     - zprofile
     - zshenv
-    - zshrc
+
+- name: Copy zshrc file
+  file:
+    src: "{{ role_path }}/files/zshrc"
+    dest: ~/.zshrc
+    state: link
 
 - name: Set default shell
   user:
