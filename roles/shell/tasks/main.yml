@@ -1,8 +1,11 @@
 ---
-- name: Install zsh package
+- name: Install packages
   apt:
-    name: zsh
+    name: "{{ item }}"
     state: present
+  with_items:
+    - fonts-powerline
+    - zsh
   become: true
 
 - name: Clone prezto
