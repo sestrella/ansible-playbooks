@@ -4,6 +4,9 @@
   co = checkout
   st = status
 
+[push]
+  default = simple
+
 [user]
   email = sebas007estrella@gmail.com
   name = Sebastián Estrella
