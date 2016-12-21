@@ -13,6 +13,6 @@ fi
 # Customize to your needs...
 if [ -d ~/.zsh ]; then
   for f in ~/.zsh/*.sh; do
-    source $f
+    [ -s $f ] && source $f
   done
 fi

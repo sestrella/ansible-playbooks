@@ -9,10 +9,8 @@
     repo: https://github.com/rbenv/ruby-build.git
     dest: ~/.rbenv/plugins/ruby-build
 
-- name: Install packages
-  apt:
-    name: "{{ item }}"
-  with_items:
-    - libreadline-dev
-    - libssl-dev
-  become: yes
+- name: Copy init-rbenv.sh file
+  file:
+    src: "{{ role_path }}/files/init-rbenv.sh"
+    dest: ~/.zsh/init-rbenv.sh
+    state: link
