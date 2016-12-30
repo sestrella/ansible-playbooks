@@ -12,7 +12,8 @@
 
 - name: Install spotify
   apt:
-    pkg: spotify-client
+    name: spotify-client
+    state: present
     update_cache: yes
   become: yes
 
