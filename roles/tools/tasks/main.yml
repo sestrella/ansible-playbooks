@@ -1,9 +1,6 @@
 ---
 - include: common.yml
 
-- include: git.yml
-  tags: git
-
 - include: ngrok.yml
   tags: ngrok
 
