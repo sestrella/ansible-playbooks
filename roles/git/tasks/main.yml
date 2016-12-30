@@ -1,0 +1,12 @@
+---
+- name: Install git
+  apt:
+    name: git
+    state: present
+  become: yes
+
+- name: Symlink gitconfig
+  file:
+    src: "{{ role_path }}/files/gitconfig"
+    dest: ~/.gitconfig
+    state: link
