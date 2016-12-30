@@ -16,5 +16,5 @@
     dest: ~/.vimrc
     state: link
 
-- name: Install plugins
+- name: Install vim plugins
   shell: vim +PluginInstall +qall

@@ -1,11 +1,8 @@
 ---
-- name: Install packages
+- name: Install zsh packages
   apt:
-    name: "{{ item }}"
+    name: zsh
     state: present
-  with_items:
-    - fonts-powerline
-    - zsh
   become: true
 
 - name: Clone prezto
@@ -24,15 +21,10 @@
     - zpreztorc
     - zprofile
     - zshenv
+    - zshrc
 
-- name: Copy zshrc file
+- name: Symlink zshrc
   file:
     src: "{{ role_path }}/files/zshrc"
     dest: ~/.zshrc
     state: link
-
-- name: Set default shell
-  user:
-    name: "{{ ansible_user }}"
-    shell: /bin/zsh
-  become: true
