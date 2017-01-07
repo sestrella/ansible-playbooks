@@ -1,0 +1,8 @@
+---
+- name: Install xorg
+  pacman:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+    - xorg-server

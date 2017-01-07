@@ -1,0 +1,9 @@
+---
+- name: Install gnome
+  pacman:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+    - gnome
+    - gnome-extra

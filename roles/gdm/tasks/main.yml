@@ -1,0 +1,7 @@
+---
+- name: Enable gdm
+  systemd:
+    name: gdm
+    state: started
+    enabled: true
+  become: yes
