@@ -1,0 +1,7 @@
+---
+- name: Enable dhcpcd
+  systemd:
+    name: dhcpcd
+    state: started
+    enabled: true
+  become: yes
