@@ -1,34 +1,12 @@
-set nocompatible
-filetype off 
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-sensible'
+call plug#end()
 
-call vundle#end()
-filetype plugin indent on
-
-set noswapfile
-set number
-
-set expandtab
-set tabstop=2
-set shiftwidth=2
-
-set hlsearch
-
-syntax enable
-set background=dark
-colorscheme solarized
-
-let mapleader = ","
-
-map <leader>n :NERDTreeToggle<CR>
-
-let g:airline_powerline_fonts = 1
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
