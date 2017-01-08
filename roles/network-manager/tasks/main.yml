@@ -1,7 +1,7 @@
 ---
-- name: Enable dhcpcd
+- name: Enable service
   systemd:
-    name: dhcpcd
+    name: NetworkManager
     state: started
     enabled: yes
   become: yes
