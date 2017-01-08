@@ -1,20 +1,19 @@
 ---
-- name: Install vim
-  apt:
+- name: Install package
+  pacman:
     name: vim
-    state: present
   become: yes
 
-- name: Install vim plugin manager
+- name: Install plugin manager
   git:
     repo: https://github.com/VundleVim/Vundle.vim.git
     dest: ~/.vim/bundle/Vundle.vim
 
-- name: Copy vimrc file
+- name: Symlink configuration file
   file:
     src: "{{ role_path }}/files/vimrc"
     dest: ~/.vimrc
     state: link
 
-- name: Install vim plugins
+- name: Install plugins
   shell: vim +PluginInstall +qall
