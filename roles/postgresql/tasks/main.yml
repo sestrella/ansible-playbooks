@@ -1,12 +1,27 @@
 ---
 - name: Install packages
-  apt: name={{ item }} state=present
-  become: yes
+  pacman:
+    name: "{{ item }}"
   with_items:
     - postgresql
     - python-psycopg2
+  become: yes
 
-- name: Add user
+- name: Initialize database
+  command: initdb --locale en_US.UTF-8 -D "/var/lib/postgres/data"
+  args:
+    creates: /var/lib/postgres/data/postgresql.conf
+  become: yes
+  become_user: postgres
+
+- name: Start service
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Create user
   postgresql_user:
     name: sestrella
     role_attr_flags: SUPERUSER
