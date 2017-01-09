@@ -1,8 +1,0 @@
----
-- name: Enable multilib
-  ini_file:
-    dest: /etc/pacman.conf
-    section: multilib
-    option: Include
-    value: /etc/pacman.d/mirrorlist
-  become: yes

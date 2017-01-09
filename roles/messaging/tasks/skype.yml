@@ -1,6 +1,0 @@
----
-- name: Install skype
-  apt:
-    name: skype
-    state: present
-  become: yes

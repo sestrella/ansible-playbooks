@@ -1,36 +1,36 @@
 ---
+- name: Add key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    state: present
+  become: yes
+
+- name: Add repository
+  apt_repository:
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
+    state: present
+  become: yes
+
 - name: Install packages
-  pacman:
+  apt:
     name: "{{ item }}"
+    state: present
+    update_cache: yes
   with_items:
     - postgresql
     - python-psycopg2
   become: yes
 
-- name: Initialize database
-  command: initdb --locale en_US.UTF-8 -D "/var/lib/postgres/data"
-  args:
-    creates: /var/lib/postgres/data/postgresql.conf
-  become: yes
-  become_user: postgres
-
-- name: Start service
-  systemd:
-    name: postgresql
-    state: started
-    enabled: yes
-  become: yes
-
-- name: Create user
+- name: Add role
   postgresql_user:
-    name: sestrella
+    name: "{{ ansible_user_id }}"
     role_attr_flags: SUPERUSER
   become: yes
   become_user: postgres
 
-- name: Create database
+- name: Add database
   postgresql_db:
-    name: sestrella
-    owner: sestrella
+    name: "{{ ansible_user_id }}"
+    owner: "{{ ansible_user_id }}"
   become: yes
   become_user: postgres

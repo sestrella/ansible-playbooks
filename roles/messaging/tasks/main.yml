@@ -1,6 +1,0 @@
----
-- include: skype.yml
-  tags: skype
-
-- include: slack.yml
-  tags: slack

@@ -1,8 +1,0 @@
----
-- apt_repository:
-    repo: 'ppa:martin-frost/thoughtbot-rcm'
-  become: yes
-
-- apt:
-    name: rcm
-  become: yes

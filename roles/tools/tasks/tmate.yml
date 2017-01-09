@@ -1,8 +1,0 @@
----
-- apt_repository:
-    repo: 'ppa:tmate.io/archive'
-  become: true
-
-- apt:
-    name: tmate
-  become: true

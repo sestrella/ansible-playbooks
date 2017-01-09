@@ -1,6 +1,6 @@
 ---
 - name: Install package
-  pacman:
+  apt:
     name: zsh
     state: present
   become: yes
