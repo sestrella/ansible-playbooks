@@ -35,6 +35,11 @@
   with_items:
     - zlogin
     - zlogout
-    - zpreztorc
     - zprofile
     - zshenv
+
+- name: Symlink configuration file
+  file:
+    src: "{{ role_path }}/files/zpreztorc"
+    dest: ~/.zpreztorc
+    state: link
