@@ -2,8 +2,18 @@
 - name: Install packages
   pacman:
     name: "{{ item }}"
+    state: present
   with_items:
     - gnome
     - gnome-extra
     - gnome-software
   become: yes
+
+- name: Load profile
+  shell: dconf load /org/gnome/terminal/legacy/profiles:/:5e6f9e88-b8e5-4490-ba04-18dc268e02a4/ < "{{ role_path }}/files/profile.conf"
+
+- name: Set profile list
+  shell: gsettings set org.gnome.Terminal.ProfilesList list "['5e6f9e88-b8e5-4490-ba04-18dc268e02a4']"
+
+- name: Set default profile
+  shell: gsettings set org.gnome.Terminal.ProfilesList default "5e6f9e88-b8e5-4490-ba04-18dc268e02a4"
