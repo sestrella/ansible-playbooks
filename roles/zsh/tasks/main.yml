@@ -5,6 +5,17 @@
     state: present
   become: yes
 
+- name: Symlink configuration file
+  file:
+    src: "{{ role_path }}/files/zshrc"
+    dest: ~/.zshrc
+    state: link
+
+- name: Create directory
+  file:
+    path: ~/.zsh
+    state: directory
+
 - name: Change shell
   user:
     name: "{{ ansible_user_id }}"
@@ -27,4 +38,3 @@
     - zpreztorc
     - zprofile
     - zshenv
-    - zshrc

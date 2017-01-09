@@ -1,0 +1,11 @@
+---
+- name: Clone nvm
+  git:
+    repo: https://github.com/creationix/nvm.git
+    dest: ~/.nvm
+
+- name: Symlink init script
+  file:
+    src: "{{ role_path }}/files/init-nvm.sh"
+    dest: ~/.zsh/init-nvm.sh
+    state: link
