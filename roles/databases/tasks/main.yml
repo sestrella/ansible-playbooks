@@ -1,6 +1,0 @@
----
-- include: mongodb.yml
-  tags: mongodb
-
-- include: postgresql.yml
-  tags: postgresql

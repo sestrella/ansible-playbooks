@@ -10,3 +10,10 @@ call plug#end()
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+
+set number
+
+set expandtab
+set shiftwidth=2
+set smarttab
+set tabstop=2
