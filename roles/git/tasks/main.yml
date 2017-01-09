@@ -1,11 +1,11 @@
 ---
-- name: Install git
-  apt:
+- name: Install package
+  pacman:
     name: git
     state: present
   become: yes
 
-- name: Symlink gitconfig
+- name: Symlink configuration
   file:
     src: "{{ role_path }}/files/gitconfig"
     dest: ~/.gitconfig
