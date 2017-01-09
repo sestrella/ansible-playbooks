@@ -5,6 +5,7 @@
     state: present
   with_items:
     - fonts-powerline
+    - silversearcher-ag
     - vim
   become: yes
 
