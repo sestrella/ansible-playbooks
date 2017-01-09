@@ -1,8 +1,11 @@
 ---
 - name: Install package
   apt:
-    name: vim
+    name: "{{ item }}"
     state: present
+  with_items:
+    - fonts-powerline
+    - vim
   become: yes
 
 - name: Create directories

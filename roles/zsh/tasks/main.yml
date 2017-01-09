@@ -7,7 +7,7 @@
 
 - name: Change shell
   user:
-    name: sestrella
+    name: "{{ ansible_user_id }}"
     shell: /bin/zsh
   become: yes
 
