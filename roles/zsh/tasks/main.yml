@@ -1,19 +1,25 @@
 ---
-- name: Install zsh packages
-  apt:
+- name: Install package
+  pacman:
     name: zsh
     state: present
-  become: true
+  become: yes
 
-- name: Clone prezto
+- name: Change shell
+  user:
+    name: sestrella
+    shell: /bin/zsh
+  become: yes
+
+- name: Clone framework
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
     dest: ~/.zprezto
 
-- name: Symlink prezto files
+- name: Symlink configuration files
   file:
-    src: ~/.zprezto/runcoms/{{ item }}
-    dest: ~/.{{ item }}
+    src: "~/.zprezto/runcoms/{{ item }}"
+    dest: "~/.{{ item }}"
     state: link
   with_items:
     - zlogin
@@ -22,9 +28,3 @@
     - zprofile
     - zshenv
     - zshrc
-
-- name: Symlink zshrc
-  file:
-    src: "{{ role_path }}/files/zshrc"
-    dest: ~/.zshrc
-    state: link
