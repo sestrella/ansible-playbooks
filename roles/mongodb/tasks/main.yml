@@ -17,11 +17,12 @@
   apt:
     name: mongodb-org
     state: present
+    update_cache: yes
   become: yes
 
 - name: Start service
-  systemd:
-    name: mongodb
+  service:
+    name: mongod
     state: started
     enabled: yes
   become: yes
