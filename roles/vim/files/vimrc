@@ -74,6 +74,8 @@ if executable('ag')
 endif
 " }}}
 
+let NERDTreeShowHidden=1
+
 " tabular {{{
 if exists(":Tabularize")
   vmap <Leader>a= :Tabularize /=<CR>
