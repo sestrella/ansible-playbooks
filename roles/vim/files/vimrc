@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'altercation/vim-colors-solarized'
-Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
@@ -12,6 +11,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
