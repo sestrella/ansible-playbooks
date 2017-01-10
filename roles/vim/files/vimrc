@@ -1,9 +1,11 @@
+" plugins {{{
 call plug#begin('~/.vim/plugged')
 
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
+Plug 'godlygeek/tabular'
 Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdcommenter'
@@ -13,10 +15,13 @@ Plug 'tpope/vim-sensible'
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
+" }}}
 
+" colorscheme {{{
 syntax enable
 set background=dark
 colorscheme solarized
+" }}}
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -24,21 +29,50 @@ set undodir=~/.vim/undo//
 
 set number
 
+" indentation {{{
 set expandtab
 set shiftwidth=2
 set smarttab
 set tabstop=2
+" }}}
+
+" search {{{
+set ignorecase
+set incsearch
+set smartcase
+set hlsearch
+" }}}
+
+" line {{{
+set textwidth=80
+set colorcolumn=+1
+" }}}
 
 let mapleader = ','
 
-let g:airline_powerline_fonts = 1
-let g:ctrlp_map = '<Leader>p'
+" syntastic {{{
+let g:syntastic_check_on_open = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+" }}}
+
+let g:airline_powerline_fonts = 1
 let g:tsuquyomi_disable_quickfix = 1
+
+" ctrlp {{{
+let g:ctrlp_map = '<Leader>p'
 
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+" }}}
 
-map <Leader>n :NERDTreeToggle<CR>
+" tabular {{{
+if exists(":Tabularize")
+  vmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+" }}}
+
+noremap <Leader><space> :nohlsearch<CR>
+noremap <Leader>n :NERDTreeToggle<CR>
