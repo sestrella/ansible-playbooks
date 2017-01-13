@@ -1,5 +1,5 @@
 ---
 - hosts: all
   roles:
-    - git
-    - tmux
+    - rcm
+    - touchpad-indicator
