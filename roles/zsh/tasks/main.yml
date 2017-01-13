@@ -1,33 +1,22 @@
 ---
-- name: Install package
+- name: Install zsh
   apt:
     name: zsh
     state: present
   become: yes
 
-- name: Symlink configuration file
-  file:
-    src: "{{ role_path }}/files/zshrc"
-    dest: ~/.zshrc
-    state: link
-
-- name: Create directory
-  file:
-    path: ~/.zsh
-    state: directory
-
-- name: Change shell
+- name: Change user shell
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
   become: yes
 
-- name: Clone framework
+- name: Install zprezto
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
     dest: ~/.zprezto
 
-- name: Symlink configuration files
+- name: Symlink zprezto configuration files
   file:
     src: "~/.zprezto/runcoms/{{ item }}"
     dest: "~/.{{ item }}"
@@ -35,11 +24,7 @@
   with_items:
     - zlogin
     - zlogout
+    - zpreztorc
     - zprofile
     - zshenv
-
-- name: Symlink configuration file
-  file:
-    src: "{{ role_path }}/files/zpreztorc"
-    dest: ~/.zpreztorc
-    state: link
+    - zshrc
