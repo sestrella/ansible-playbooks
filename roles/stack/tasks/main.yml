@@ -1,0 +1,9 @@
+---
+- name: Install stack
+  apt:
+    name: haskell-stack
+    state: present
+  become: yes
+
+- name: Upgrade stack
+  command: stack upgrade
