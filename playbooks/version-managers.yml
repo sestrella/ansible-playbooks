@@ -1,9 +1,5 @@
 ---
 - hosts: all
   roles:
-    - role: nvm
-      tags: node
-    - role: rbenv
-      tags: ruby
-    - role: stack
-      tags: haskell
+    - nvm
+    - rbenv
