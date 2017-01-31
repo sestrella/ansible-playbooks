@@ -1,26 +1,26 @@
 ---
-- name: Add MongoDB repository key
+- name: Add mongodb repository key
   apt_key:
     id: 0C49F3730359A14518585931BC711F9BA15703C6
     keyserver: hkp://keyserver.ubuntu.com:80
     state: present
   become: yes
 
-- name: Add MongoDB repository
+- name: Add mongodb repository
   apt_repository:
-    repo: "deb [arch=amd64,arm64] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse"
-    filename: "mongodb-org"
+    repo: deb [arch=amd64,arm64] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse
+    filename: mongodb
     state: present
   become: yes
 
-- name: Install MongoDB
+- name: Install mongodb
   apt:
     name: mongodb-org
     state: present
     update_cache: yes
   become: yes
 
-- name: Start MonogDB service
+- name: Start mongodb service
   service:
     name: mongod
     state: started

@@ -1,5 +1,5 @@
 ---
-- name: Install dependencies
+- name: Install haskell-stack dependencies
   apt:
     name: "{{ item }}"
     state: present
@@ -20,6 +20,7 @@
   apt:
     name: haskell-stack
     state: present
+    update_cache: yes
   become: yes
 
 - name: Upgrade haskell-stack
