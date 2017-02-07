@@ -1,12 +1,16 @@
 ---
-- name: Clone zim
+- name: Install zim
   git:
     repo: https://github.com/Eriner/zim.git
     dest: ~/.zim
     recursive: yes
 
-- name: Symlink file
+- name: Symlink zim file
   file:
-    src: ~/.zim/templates/zlogin
-    dest: ~/.zlogin
+    src: "~/.zim/templates/{{ item }}"
+    dest: "~/.{{ item }}"
     state: link
+  with_items:
+    - zimrc
+    - zlogin
+    - zshrc
