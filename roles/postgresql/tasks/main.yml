@@ -1,12 +1,12 @@
 ---
 - name: Add repository key
   apt_key:
-    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    url: "{{ postgresql_apt_key_url }}"
     state: present
 
 - name: Add repository
   apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
+    repo: "{{ postgresql_apt_repository_repo }}"
     filename: postgresql
     state: present
 
@@ -21,3 +21,13 @@
     name: postgresql
     enabled: yes
     state: started
+
+- name: Add database user
+  postgresql_user:
+    name: "{{ ansible_user_id }}"
+    state: present
+
+- name: Create database
+  postgresql_db:
+    name: "{{ ansible_user_id }}"
+    owner: "{{ ansible_user_id }}"
