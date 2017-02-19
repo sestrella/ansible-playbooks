@@ -1,5 +1,4 @@
 ---
 - hosts: all
   roles:
-    - editors
-    - tools
+    - containers

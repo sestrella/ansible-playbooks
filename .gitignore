@@ -1,1 +1,2 @@
-*.retry
+external-roles/
+playbooks/*.retry

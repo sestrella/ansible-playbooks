@@ -1,6 +1,0 @@
----
-- include: docker.yml
-  tags: docker
-
-- include: docker-compose.yml
-  tags: docker-compose

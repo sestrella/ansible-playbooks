@@ -3,12 +3,11 @@
   apt:
     name: virtualbox
     state: present
-  become: yes
-  tags: virtualbox
+  with_items:
+    - virtualbox
+    - vagrant
 
 - name: Install vagrant
   apt:
     name: vagrant
     state: present
-  become: yes
-  tags: virtualbox

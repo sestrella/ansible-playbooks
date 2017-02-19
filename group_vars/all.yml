@@ -1,0 +1,9 @@
+---
+postgresql_version: 9.6
+
+postgresql_users:
+  - name: '{{ ansible_user_id }}'
+
+postgresql_databases:
+  - name: '{{ ansible_user_id }}'
+    owner: '{{ ansible_user_id }}'
