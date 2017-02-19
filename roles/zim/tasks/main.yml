@@ -2,12 +2,12 @@
 - name: Install package
   git:
     repo: https://github.com/Eriner/zim.git
-    dest: "{{ ansible_user_dir }}/.zim"
+    dest: "{{ zim_dir }}"
     recursive: yes
 
 - name: Symlink files
   file:
-    src: "{{ ansible_user_dir }}/.zim/templates/{{ item }}"
+    src: "{{ zim_dir }}/templates/{{ item }}"
     dest: "{{ ansible_user_dir }}/.{{ item }}"
     state: link
   with_items:
