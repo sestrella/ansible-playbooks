@@ -1,12 +1,10 @@
 ---
-- name: Install zsh
+- name: Install package
   apt:
     name: zsh
     state: present
-  become: yes
 
 - name: Change user shell
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
-  become: yes
