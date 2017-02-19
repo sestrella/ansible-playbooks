@@ -1,0 +1,35 @@
+---
+- name: Add repository key
+  apt_key:
+    url: https://apt.dockerproject.org/gpg
+    state: present
+
+- name: Add repository
+  apt_repository:
+    repo: "{{ docker_repo }}"
+    filename: docker
+    state: present
+
+- name: Install package
+  apt:
+    name: docker-engine
+    update_cache: yes
+    state: present
+
+- name: Enable service
+  service:
+    name: docker
+    enabled: yes
+    state: started
+
+- name: Add user to group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: yes
+
+- name: Download compose
+  get_url:
+    url: "{{ docker_compose_url }}"
+    dest: /usr/local/bin/docker-compose
+    mode: 0750

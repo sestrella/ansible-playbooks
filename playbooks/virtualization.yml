@@ -1,5 +1,5 @@
 ---
 - hosts: all
   roles:
-    - docker
-    - virtualbox
+    - role: docker
+      become: yes
