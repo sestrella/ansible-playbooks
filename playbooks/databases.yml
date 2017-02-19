@@ -3,3 +3,5 @@
   roles:
     - role: ANXS.postgresql
       become: yes
+    - role: greendayonfire.mongodb
+      become: yes
