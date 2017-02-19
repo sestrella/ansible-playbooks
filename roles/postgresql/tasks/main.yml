@@ -1,23 +1,23 @@
 ---
-- name: Add postgresql repository key
+- name: Add repository key
   apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     state: present
 
-- name: Add postgresql repository
+- name: Add repository
   apt_repository:
-    repo: deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
     filename: postgresql
     state: present
 
-- name: Install postgresql
+- name: Install package
   apt:
     name: postgresql
     update_cache: yes
     state: present
 
-- name: Start postgresql service
+- name: Enable service
   service:
     name: postgresql
-    state: started
     enabled: yes
+    state: started
