@@ -1,12 +1,12 @@
 ---
 - name: Add repository key
   apt_key:
-    url: "{{ postgresql_apt_key_url }}"
+    url: "{{ postgresql_key_url }}"
     state: present
 
 - name: Add repository
   apt_repository:
-    repo: "{{ postgresql_apt_repository_repo }}"
+    repo: "{{ postgresql_repo }}"
     filename: postgresql
     state: present
 
