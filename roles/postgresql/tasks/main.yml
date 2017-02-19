@@ -3,25 +3,21 @@
   apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     state: present
-  become: yes
 
 - name: Add postgresql repository
   apt_repository:
     repo: deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
     filename: postgresql
     state: present
-  become: yes
 
 - name: Install postgresql
   apt:
     name: postgresql
-    state: present
     update_cache: yes
-  become: yes
+    state: present
 
 - name: Start postgresql service
   service:
     name: postgresql
     state: started
     enabled: yes
-  become: yes
