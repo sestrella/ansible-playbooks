@@ -4,5 +4,7 @@
     - role: haskell-stack
       become: yes
       tags: haskell
-    - nvm
-    - rbenv
+    - role: nvm
+      tags: node
+    - role: rbenv
+      tags: ruby
