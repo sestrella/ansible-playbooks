@@ -1,10 +1,10 @@
 ---
-- name: Install rbenv
+- name: Install package
   git:
     repo: https://github.com/rbenv/rbenv.git
-    dest: ~/.rbenv
+    dest: "{{ rbenv_dir }}"
 
-- name: Install rbenv plugin
+- name: Install plugin
   git:
     repo: https://github.com/rbenv/ruby-build.git
-    dest: ~/.rbenv/plugins/ruby-build
+    dest: "{{ rbenv_dir }}/plugins/ruby-build"
