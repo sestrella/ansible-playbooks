@@ -1,27 +1,7 @@
 ---
-- name: Install haskell-stack dependencies
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - g++
-    - gcc
-    - git
-    - gnupg
-    - libc6-dev
-    - libffi-dev
-    - libgmp-dev
-    - make
-    - xz-utils
-    - zlib1g-dev
-  become: yes
-
-- name: Install haskell-stack
+- name: Install package
   apt:
     name: haskell-stack
-    state: present
-    update_cache: yes
-  become: yes
 
-- name: Upgrade haskell-stack
-  command: stack upgrade
+- name: Upgrade package
+  shell: stack upgrade

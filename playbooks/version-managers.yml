@@ -1,6 +1,8 @@
 ---
 - hosts: all
   roles:
-    - haskell-stack
+    - role: haskell-stack
+      become: yes
+      tags: haskell
     - nvm
     - rbenv
