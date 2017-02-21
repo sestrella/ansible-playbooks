@@ -1,3 +1,0 @@
----
-slack_version: 2.4.2
-slack_url: "https://downloads.slack-edge.com/linux_releases/slack-desktop-{{ slack_version }}-amd64.deb"

@@ -1,5 +1,5 @@
 ---
 - name: Install package
   apt:
-    deb: "{{ slack_url }}"
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.4.2-amd64.deb
     state: present
