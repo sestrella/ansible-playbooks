@@ -13,11 +13,6 @@
     name: docker-engine
     update_cache: yes
 
-- name: Enable service
-  service:
-    name: docker
-    enabled: yes
-
 - name: Add user to group
   user:
     name: "{{ ansible_user_id }}"
