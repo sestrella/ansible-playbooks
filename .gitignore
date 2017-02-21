@@ -1,2 +1,2 @@
 external-roles/
-playbooks/*.retry
+*.retry
