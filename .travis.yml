@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y ansible
   - docker build -t ansible-playbooks .
-  - docker run --name ansible-playbooks-test ansible-playbooks
+  - docker run --name ansible-playbooks-test -d ansible-playbooks
 
 script:
   - ansible-playbook -l test site.yml
