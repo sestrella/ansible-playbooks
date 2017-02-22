@@ -1,2 +1,5 @@
 [development]
 localhost ansible_connection=local
+
+[test]
+ansible-playbooks-test ansible_connection=docker
