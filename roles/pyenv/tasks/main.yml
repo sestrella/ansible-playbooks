@@ -1,0 +1,12 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pyenv_dependencies }}"
+  become: yes
+
+- name: Clone pyenv
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: "{{ pyenv_root }}"
