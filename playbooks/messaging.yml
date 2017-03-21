@@ -2,4 +2,8 @@
 - hosts: all
   roles:
     - role: slack
+      tags: slack
+      become: yes
+    - role: zoom
+      tags: zoom
       become: yes

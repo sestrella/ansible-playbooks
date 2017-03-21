@@ -1,0 +1,11 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ zoom.dependencies }}"
+
+- name: Install package
+  apt:
+    deb: https://zoom.us/client/latest/zoom_amd64.deb
+    state: present
