@@ -1,0 +1,17 @@
+---
+pyenv:
+  dependencies:
+    - build-essential
+    - curl
+    - libbz2-dev
+    - libncurses5-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - libssl-dev
+    - llvm
+    - make
+    - wget
+    - xz-utils
+    - zlib1g-dev
+
+  root: ~/.pyenv
